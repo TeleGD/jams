@@ -324,13 +324,10 @@ p.winner {
 }
 p.winner::before {
 	--medal: #fc0;
-	content: attr(data-category);
-	direction: ltr;
-	place-items: center;
-	display: grid;
 	width: 11.2rem;
 	height: 11.2rem;
 	margin: -4rem -2rem -4rem -8rem;
+	padding: 1.2rem;
 	border-radius: 50%;
 	border: 1.2rem double var(--purple);
 	background-color: var(--medal);
@@ -339,4 +336,13 @@ p.winner::before {
 	font-size: 6.4rem;
 	font-style: normal;
 	font-weight: normal;
+}
+p.winner.originality::before {
+	content: url("./icons/originality.svg");
+}
+p.winner.gameplay::before {
+	content: url("./icons/gameplay.svg");
+}
+p.winner.design::before {
+	content: url("./icons/design.svg");
 }
