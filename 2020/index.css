@@ -37,10 +37,8 @@ html {
 }
 body {
 	overflow: hidden auto;
-	background-color: var(--purple);
 	background:
-		linear-gradient(to bottom, var(--yellow-shadow) 0, #0000 100vh),
-		linear-gradient(to top, var(--yellow-shadow) 0, #0000 100vh),
+		linear-gradient(to bottom, var(--yellow-shadow), #0000 100vh),
 		var(--purple);
 	color: var(--yellow);
 	font-family: "Quantico", monospace;
@@ -86,7 +84,7 @@ header > hgroup > h2 {
 	font-size: 3.2rem;
 	font-weight: normal;
 	fill: currentColor;
-	box-shadow: 0 0 100vh var(--yellow);
+	box-shadow: 0 0 100vh var(--yellow-shadow);
 }
 header > nav {
 	min-width: 0;
@@ -176,7 +174,7 @@ footer > p > a {
 	color: var(--yellow);
 	font-size: 3.2rem;
 	fill: currentColor;
-	box-shadow: 0 0 100vh var(--purple);
+	box-shadow: 0 0 100vh var(--purple-shadow);
 }
 footer > p > a:hover,
 footer > p > a:focus-within {
@@ -197,9 +195,8 @@ footer > p::after {
 	border: 1.2rem double currentColor;
 	border-bottom: 0;
 	background:
-		url("../../favicon.ico") center / contain no-repeat content-box,
+		url("../../logotypes/brandmark/multicolored.png") center / contain no-repeat content-box,
 		var(--yellow);
-	color: var(--purple);
 }
 /*~~~~~~ main ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 main {
@@ -212,7 +209,7 @@ main {
 main > section {
 	position: relative;
 	min-width: 0;
-	padding: 2rem;
+	padding: 2rem max(2rem, 50vw - 44rem);
 }
 main > section:nth-of-type(odd) {
 	background-color: var(--yellow);
