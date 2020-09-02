@@ -118,6 +118,10 @@ header > nav > ul > li > p > a:hover,
 header > nav > ul > li > p > a:focus-within {
 	outline: 0;
 	outline-offset: 0;
+	text-decoration: none;
+}
+header > nav > ul > li > p > a:hover,
+header > nav > ul:not(:hover) > li > p > a:focus-within {
 	border-color: currentColor;
 	background:
 		linear-gradient(var(--yellow), var(--yellow)) padding-box,
@@ -260,8 +264,6 @@ ol.podium {
 	display: grid;
 	border-bottom: 1.2rem double currentColor;
 	color: var(--purple);
-	font-style: italic;
-	font-weight: bold;
 }
 ol.podium > li {
 	flex: 1 0 0;
@@ -270,7 +272,6 @@ ol.podium > li {
 	min-width: 0;
 	min-height: 0;
 	margin: 0;
-	font-size: 3.2rem;
 }
 ol.podium > li:nth-of-type(2) {
 	order: -1;
@@ -307,42 +308,83 @@ ol.podium > li:nth-of-type(3)::before {
 	height: 9.2rem;
 }
 ol.podium > li > p {
-	text-align: center;
-}
-p.winner {
-	place-items: center start;
-	grid-template-columns: auto 1fr;
-	display: grid;
-	border: 1.2rem double var(--yellow);
-	border-radius: 0 3.2rem 3.2rem 0;
-	margin: 4rem 2rem 4rem 6rem;
-	padding: 0 2rem;
-	gap: 4rem;
 	font-size: 3.2rem;
 	font-style: italic;
 	font-weight: bold;
+	text-align: center;
 }
-p.winner::before {
-	--medal: #fc0;
+dl.award {
+	place-items: center stretch;
+	grid-template-columns: auto 1fr;
+	display: grid;
+	border-left: 1.2rem double currentColor;
+}
+dl.award > dt {
+	position: relative;
+	place-items: start center;
+	grid-template-rows: auto 1fr;
+	display: grid;
+	width: 14.4rem;
+	margin: 10rem 2rem 6rem;
+	padding: 2rem 1rem;
+	border-radius: 3.2rem 3.2rem 0 0;
+	border: 1.2rem double var(--purple);
+	background-color: var(--yellow);
+	color: var(--purple);
+	text-align: center;
+}
+dl.award > dt::before {
 	width: 11.2rem;
 	height: 11.2rem;
-	margin: -4rem -2rem -4rem -8rem;
+	margin: -11.2rem -.6rem 2rem;
 	padding: 1.2rem;
 	border-radius: 50%;
 	border: 1.2rem double var(--purple);
 	background-color: var(--medal);
 	color: var(--purple);
-	font-family: "Ewert", monospace;
-	font-size: 6.4rem;
-	font-style: normal;
-	font-weight: normal;
 }
-p.winner.originality::before {
+dl.award.originality > dt::before {
+	--medal: #fc0;
 	content: url("./icons/originality.svg");
 }
-p.winner.gameplay::before {
+dl.award.gameplay > dt::before {
+	--medal: #fc0;
 	content: url("./icons/gameplay.svg");
 }
-p.winner.design::before {
+dl.award.design > dt::before {
+	--medal: #fc0;
 	content: url("./icons/design.svg");
+}
+dl.award > dt::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: -1.2rem;
+	width: 14.4rem;
+	height: 7.2rem;
+	background:
+		linear-gradient(to top left, #0000 75%, var(--yellow) 0),
+		linear-gradient(to top right, #0000 75%, var(--yellow) 0),
+		linear-gradient(to top left, #0000 calc(75% - .4rem), currentColor 0),
+		linear-gradient(to top right, #0000 calc(75% - .4rem), currentColor 0),
+		linear-gradient(to top left, #0000 calc(75% - .8rem), var(--yellow) 0),
+		linear-gradient(to top right, #0000 calc(75% - .8rem), var(--yellow) 0),
+		linear-gradient(to top left, #0000 calc(75% - 1.2rem), currentColor 0),
+		linear-gradient(to top right, #0000 calc(75% - 1.2rem), currentColor 0);
+	border: 1.2rem double var(--purple);
+	border-top: 0;
+	border-bottom: 0;
+}
+dl.award > dd {
+	min-height: 0;
+	margin: 0;
+}
+dl.award > dd::before {
+	content: none;
+}
+dl.award > dd > p {
+	font-size: 3.2rem;
+	font-style: italic;
+	font-weight: bold;
+	text-align: left;
 }
