@@ -266,7 +266,6 @@ ol.podium {
 	color: var(--purple);
 }
 ol.podium > li {
-	flex: 1 0 0;
 	flex-flow: column nowrap;
 	display: flex;
 	min-width: 0;
@@ -288,24 +287,24 @@ ol.podium > li::before {
 	border: 1.2rem double var(--yellow);
 	border-bottom: 0;
 	background:
-		radial-gradient(circle, var(--medal) 4.8rem, #0000 0 5.2rem, var(--medal) 0 5.6rem, #0000 0) no-repeat,
+		radial-gradient(circle, var(--medal) 6rem, #0000 0 6.4rem, var(--medal) 0 6.8rem, #0000 0) no-repeat,
 		var(--purple);
 	font-family: "Ewert", monospace;
-	font-size: 6.4rem;
+	font-size: 8rem;
 	font-style: normal;
 	font-weight: normal;
 }
 ol.podium > li:nth-of-type(1)::before {
 	--medal: #fc0;
-	height: 17.2rem;
+	height: 19.2rem;
 }
 ol.podium > li:nth-of-type(2)::before {
 	--medal: #ccc;
-	height: 13.2rem;
+	height: 15.2rem;
 }
 ol.podium > li:nth-of-type(3)::before {
 	--medal: #963;
-	height: 9.2rem;
+	height: 11.2rem;
 }
 ol.podium > li > p {
 	font-size: 3.2rem;
@@ -317,27 +316,26 @@ dl.award {
 	place-items: center stretch;
 	grid-template-columns: auto 1fr;
 	display: grid;
-	border-left: 1.2rem double currentColor;
 }
 dl.award > dt {
-	position: relative;
 	place-items: start center;
 	grid-template-rows: auto 1fr;
 	display: grid;
-	width: 14.4rem;
-	margin: 10rem 2rem 6rem;
-	padding: 2rem 1rem;
-	border-radius: 3.2rem 3.2rem 0 0;
+	width: 12.4rem;
+	margin: 7.2rem 1rem 3.6rem;
+	padding: 2rem 0;
 	border: 1.2rem double var(--purple);
+	border-top: 0;
+	border-bottom: 0;
 	background-color: var(--yellow);
 	color: var(--purple);
 	text-align: center;
 }
 dl.award > dt::before {
-	width: 11.2rem;
-	height: 11.2rem;
-	margin: -11.2rem -.6rem 2rem;
-	padding: 1.2rem;
+	width: 14.4rem;
+	height: 14.4rem;
+	margin: -9.2rem -2.2rem 2rem;
+	padding: 2rem;
 	border-radius: 50%;
 	border: 1.2rem double var(--purple);
 	background-color: var(--medal);
@@ -357,11 +355,12 @@ dl.award.design > dt::before {
 }
 dl.award > dt::after {
 	content: "";
-	position: absolute;
-	top: 100%;
-	left: -1.2rem;
-	width: 14.4rem;
-	height: 7.2rem;
+	width: 12.4rem;
+	height: 5rem;
+	margin: 2rem -1.2rem -9.2rem;
+	border: 1.2rem double var(--purple);
+	border-top: 0;
+	border-bottom: 0;
 	background:
 		linear-gradient(to top left, #0000 75%, var(--yellow) 0),
 		linear-gradient(to top right, #0000 75%, var(--yellow) 0),
@@ -371,9 +370,7 @@ dl.award > dt::after {
 		linear-gradient(to top right, #0000 calc(75% - .8rem), var(--yellow) 0),
 		linear-gradient(to top left, #0000 calc(75% - 1.2rem), currentColor 0),
 		linear-gradient(to top right, #0000 calc(75% - 1.2rem), currentColor 0);
-	border: 1.2rem double var(--purple);
-	border-top: 0;
-	border-bottom: 0;
+	color: var(--purple);
 }
 dl.award > dd {
 	min-height: 0;
