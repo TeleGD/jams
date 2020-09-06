@@ -306,18 +306,18 @@ ol.podium > li:nth-of-type(3)::before {
 	--medal: #963;
 	height: 11.2rem;
 }
-ol.podium > li > p {
+ol.podium > li > p:nth-of-type(1) {
 	font-size: 3.2rem;
 	font-style: italic;
 	font-weight: bold;
 	text-align: center;
 }
-dl.award {
+dl.pantheon {
 	place-items: center stretch;
 	grid-template-columns: auto 1fr;
 	display: grid;
 }
-dl.award > dt {
+dl.pantheon > dt {
 	place-items: start center;
 	grid-template-rows: auto 1fr;
 	display: grid;
@@ -331,7 +331,7 @@ dl.award > dt {
 	color: var(--purple);
 	text-align: center;
 }
-dl.award > dt::before {
+dl.pantheon > dt::before {
 	width: 14.4rem;
 	height: 14.4rem;
 	margin: -9.2rem -2.2rem 2rem;
@@ -341,19 +341,19 @@ dl.award > dt::before {
 	background-color: var(--medal);
 	color: var(--purple);
 }
-dl.award.originality > dt::before {
+dl.pantheon > dt:nth-of-type(1)::before {
 	--medal: #fc0;
 	content: url("./icons/originality.svg");
 }
-dl.award.gameplay > dt::before {
+dl.pantheon > dt:nth-of-type(2)::before {
 	--medal: #fc0;
 	content: url("./icons/gameplay.svg");
 }
-dl.award.design > dt::before {
+dl.pantheon > dt:nth-of-type(3)::before {
 	--medal: #fc0;
 	content: url("./icons/design.svg");
 }
-dl.award > dt::after {
+dl.pantheon > dt::after {
 	content: "";
 	width: 12.4rem;
 	height: 5rem;
@@ -372,14 +372,14 @@ dl.award > dt::after {
 		linear-gradient(to top right, #0000 calc(75% - 1.2rem), currentColor 0);
 	color: var(--purple);
 }
-dl.award > dd {
+dl.pantheon > dd {
 	min-height: 0;
 	margin: 0;
 }
-dl.award > dd::before {
+dl.pantheon > dd::before {
 	content: none;
 }
-dl.award > dd > p {
+dl.pantheon > dd > p:nth-of-type(1) {
 	font-size: 3.2rem;
 	font-style: italic;
 	font-weight: bold;
