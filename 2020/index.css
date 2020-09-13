@@ -394,6 +394,15 @@ section.team {
 	display: flow-root;
 	margin: 2rem 0;
 }
+section.team > h3 > a::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+}
 section.team > figure {
 	position: relative;
 	margin: 2rem -2rem;
@@ -401,6 +410,87 @@ section.team > figure {
 	border: 1.2rem double currentColor;
 	background: var(--purple);
 	color: var(--yellow);
+	transition: transform .25s;
+}
+section.team:hover > figure,
+section.team:focus-within > figure {
+	transform: rotate(-7.5deg);
+}
+section.team:nth-of-type(even):hover > figure,
+section.team:nth-of-type(even):focus-within > figure {
+	transform: rotate(7.5deg);
+}
+section.team > figure::before,
+section.team > figure::after {
+	content: "";
+	position: absolute;
+	left: -2.2rem;
+	top: -2.2rem;
+	z-index: 1;
+	width: calc(100% + 4.4rem);
+	height: calc(100% + 4.4rem);
+	color: var(--purple);
+	transition: background-position .25s, transform .25s;
+}
+section.team > figure::before {
+	background:
+		linear-gradient(-37.5deg, #0000 calc(100% - 4.8rem), var(--yellow) 0),
+		linear-gradient(-37.5deg, #0000 calc(100% - 5.2rem), currentColor 0),
+		linear-gradient(-37.5deg, #0000 calc(100% - 5.6rem), var(--yellow) 0),
+		linear-gradient(-37.5deg, #0000 calc(100% - 6rem), currentColor 0);
+	background-repeat: no-repeat;
+}
+section.team > figure::after {
+	background:
+		linear-gradient(142.5deg, #0000 calc(100% - 4.8rem), var(--yellow) 0),
+		linear-gradient(142.5deg, #0000 calc(100% - 5.2rem), currentColor 0),
+		linear-gradient(142.5deg, #0000 calc(100% - 5.6rem), var(--yellow) 0),
+		linear-gradient(142.5deg, #0000 calc(100% - 6rem), currentColor 0);
+	background-repeat: no-repeat;
+}
+section.team:nth-of-type(even) > figure::before {
+	background:
+		linear-gradient(37.5deg, #0000 calc(100% - 4.8rem), var(--yellow) 0),
+		linear-gradient(37.5deg, #0000 calc(100% - 5.2rem), currentColor 0),
+		linear-gradient(37.5deg, #0000 calc(100% - 5.6rem), var(--yellow) 0),
+		linear-gradient(37.5deg, #0000 calc(100% - 6rem), currentColor 0);
+	background-repeat: no-repeat;
+}
+section.team:nth-of-type(even) > figure::after {
+	background:
+		linear-gradient(-142.5deg, #0000 calc(100% - 4.8rem), var(--yellow) 0),
+		linear-gradient(-142.5deg, #0000 calc(100% - 5.2rem), currentColor 0),
+		linear-gradient(-142.5deg, #0000 calc(100% - 5.6rem), var(--yellow) 0),
+		linear-gradient(-142.5deg, #0000 calc(100% - 6rem), currentColor 0);
+	background-repeat: no-repeat;
+}
+section.team:hover > figure::before,
+section.team:hover > figure::after,
+section.team:focus-within > figure::before,
+section.team:focus-within > figure::after {
+	transform: rotate(7.5deg);
+}
+section.team:hover > figure::before,
+section.team:focus-within > figure::before {
+	background-position: -1rem -1rem;
+}
+section.team:hover > figure::after,
+section.team:focus-within > figure::after {
+	background-position: 1rem 1rem;
+}
+section.team:nth-of-type(even):hover > figure::before,
+section.team:nth-of-type(even):hover > figure::after,
+section.team:nth-of-type(even):focus-within > figure::before,
+section.team:nth-of-type(even):focus-within > figure::after {
+	transform: rotate(-7.5deg);
+}
+section.team:nth-of-type(even):hover > figure::before,
+section.team:nth-of-type(even):focus-within > figure::before {
+	background-position: 1rem -1rem;
+}
+section.team:nth-of-type(even):hover > figure::after,
+section.team:nth-of-type(even):focus-within > figure::after {
+	background-position: -1rem 1rem;
 }
 section.team > figure > figcaption {
 	font-size: 0;
@@ -413,55 +503,6 @@ section.team > figure > picture > img {
 	height: 100%;
 	border-radius: 1.2rem;
 	object-fit: cover;
-}
-section.team > figure::before,
-section.team > figure::after {
-	content: "";
-	position: absolute;
-	z-index: 1;
-	width: 9.6rem;
-	height: 7.2rem;
-	color: var(--purple);
-}
-section.team > figure::before {
-	left: -2.2rem;
-	top: -2.2rem;
-	background:
-		linear-gradient(to top left, #0000 calc(50% + 1.2rem), var(--yellow) 0),
-		linear-gradient(to top left, #0000 calc(50% + .8rem), currentColor 0),
-		linear-gradient(to top left, #0000 calc(50% + .4rem), var(--yellow) 0),
-		linear-gradient(to top left, #0000 50%, currentColor 0);
-	background-repeat: no-repeat;
-}
-section.team > figure::after {
-	left: calc(100% - 7.2rem);
-	top: calc(100% - 4.8rem);
-	background:
-		linear-gradient(to bottom right, #0000 calc(50% + 1.2rem), var(--yellow) 0),
-		linear-gradient(to bottom right, #0000 calc(50% + .8rem), currentColor 0),
-		linear-gradient(to bottom right, #0000 calc(50% + .4rem), var(--yellow) 0),
-		linear-gradient(to bottom right, #0000 50%, currentColor 0);
-	background-repeat: no-repeat;
-}
-section.team:nth-of-type(even) > figure::before {
-	left: calc(100% - 7.2rem);
-	top: -2.4rem;
-	background:
-		linear-gradient(to top right, #0000 calc(50% + 1.2rem), var(--yellow) 0),
-		linear-gradient(to top right, #0000 calc(50% + .8rem), currentColor 0),
-		linear-gradient(to top right, #0000 calc(50% + .4rem), var(--yellow) 0),
-		linear-gradient(to top right, #0000 50%, currentColor 0);
-	background-repeat: no-repeat;
-}
-section.team:nth-of-type(even) > figure::after {
-	left: -2.4rem;
-	top: calc(100% - 4.8rem);
-	background:
-		linear-gradient(to bottom left, #0000 calc(50% + 1.2rem), var(--yellow) 0),
-		linear-gradient(to bottom left, #0000 calc(50% + .8rem), currentColor 0),
-		linear-gradient(to bottom left, #0000 calc(50% + .4rem), var(--yellow) 0),
-		linear-gradient(to bottom left, #0000 50%, currentColor 0);
-	background-repeat: no-repeat;
 }
 @media screen and (min-width: 27.5em) {
 	header > hgroup > h1 {
