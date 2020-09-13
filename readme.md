@@ -1,4 +1,4 @@
-# Jams de [*TeleGame Design*](https://telegd.github.io/)
+# Game jams de [*TeleGame Design*](https://telegd.github.io/)
 
 ## Édition 2020 « Plus tu en as, pire c'est »
 
