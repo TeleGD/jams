@@ -104,8 +104,9 @@ header > nav > ul > li > p {
 	margin: 0;
 }
 header > nav > ul > li > p > a {
-	place-items: center;
-	display: flex;
+	place-items: center stretch;
+	grid-template-columns: auto auto 1fr;
+	display: grid;
 	margin: -1rem;
 	padding: 1rem;
 	gap: 1rem;
@@ -133,15 +134,14 @@ header > nav > ul:not(:hover) > li > p > a:focus-within {
 	text-decoration: none;
 	animation: ants 2s linear infinite;
 }
-header > nav > ul > li > p > a::after,
-header > nav > ul > li > p > a > strong::before {
+header > nav > ul > li > p > a::after {
 	content: "";
-	flex: 1 0 0;
 	border-top: .4rem dotted currentColor;
 }
 header > nav > ul > li > p > a > strong {
-	place-items: center;
-	display: flex;
+	place-items: center stretch;
+	display: grid;
+	gap: 1rem;
 	line-height: .625;
 	font-family: "Ewert", monospace;
 	font-size: 2em;
@@ -408,9 +408,15 @@ dl.pantheon > dd > p:nth-of-type(1) {
 		width: 44.8rem;
 		margin: 0;
 	}
+	header > nav > ul > li > p > a {
+		grid-template-columns: 50% auto 1fr;
+	}
 	header > nav > ul > li > p > a > strong {
-		gap: 1rem;
-		flex: 0 0 50%;
+		grid-template-columns: 1fr auto;
+	}
+	header > nav > ul > li > p > a > strong::before {
+		content: "";
+		border-top: .4rem dotted currentColor;
 	}
 	footer > p > a {
 		width: 44.8rem;
