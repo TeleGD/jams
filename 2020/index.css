@@ -431,40 +431,22 @@ section.team > figure::after {
 	z-index: 1;
 	width: calc(100% + 4.4rem);
 	height: calc(100% + 4.4rem);
+	background:
+		linear-gradient(var(--angle), var(--yellow) 4.8rem, currentColor 0 5.2rem, var(--yellow) 0 5.6rem, currentColor 0 6rem, #0000 0) no-repeat;
 	color: var(--purple);
 	transition: background-position .25s, transform .25s;
 }
 section.team > figure::before {
-	background:
-		linear-gradient(-37.5deg, #0000 calc(100% - 4.8rem), var(--yellow) 0),
-		linear-gradient(-37.5deg, #0000 calc(100% - 5.2rem), currentColor 0),
-		linear-gradient(-37.5deg, #0000 calc(100% - 5.6rem), var(--yellow) 0),
-		linear-gradient(-37.5deg, #0000 calc(100% - 6rem), currentColor 0);
-	background-repeat: no-repeat;
+	--angle: 142.5deg;
 }
 section.team > figure::after {
-	background:
-		linear-gradient(142.5deg, #0000 calc(100% - 4.8rem), var(--yellow) 0),
-		linear-gradient(142.5deg, #0000 calc(100% - 5.2rem), currentColor 0),
-		linear-gradient(142.5deg, #0000 calc(100% - 5.6rem), var(--yellow) 0),
-		linear-gradient(142.5deg, #0000 calc(100% - 6rem), currentColor 0);
-	background-repeat: no-repeat;
+	--angle: -37.5deg;
 }
 section.team:nth-of-type(even) > figure::before {
-	background:
-		linear-gradient(37.5deg, #0000 calc(100% - 4.8rem), var(--yellow) 0),
-		linear-gradient(37.5deg, #0000 calc(100% - 5.2rem), currentColor 0),
-		linear-gradient(37.5deg, #0000 calc(100% - 5.6rem), var(--yellow) 0),
-		linear-gradient(37.5deg, #0000 calc(100% - 6rem), currentColor 0);
-	background-repeat: no-repeat;
+	--angle: -142.5deg;
 }
 section.team:nth-of-type(even) > figure::after {
-	background:
-		linear-gradient(-142.5deg, #0000 calc(100% - 4.8rem), var(--yellow) 0),
-		linear-gradient(-142.5deg, #0000 calc(100% - 5.2rem), currentColor 0),
-		linear-gradient(-142.5deg, #0000 calc(100% - 5.6rem), var(--yellow) 0),
-		linear-gradient(-142.5deg, #0000 calc(100% - 6rem), currentColor 0);
-	background-repeat: no-repeat;
+	--angle: 37.5deg;
 }
 section.team:hover > figure::before,
 section.team:hover > figure::after,
