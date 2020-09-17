@@ -34,13 +34,13 @@
 /*~~~~~~ html, body ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 html {
 	height: 100%;
+	background: var(--purple);
 }
 body {
 	overflow: hidden auto;
 	min-height: 100%;
 	background:
-		linear-gradient(to bottom, var(--yellow-shadow), #0000 100vh),
-		var(--purple);
+		linear-gradient(to bottom, var(--yellow-shadow), #0000 100vh);
 	color: var(--yellow);
 	font-family: "Quantico", monospace;
 }
@@ -62,7 +62,7 @@ header > hgroup > h1 {
 	height: 14.2rem;
 	margin: auto;
 	padding: 0 0 1rem;
-	border-radius: 0 0 50% 50% / 0 0 100% 100%;
+	border-radius: 0 0 14.2rem 14.2rem;
 	border: 1.2rem double currentColor;
 	border-top: 0;
 	background-color: var(--purple);
@@ -76,7 +76,7 @@ header > hgroup > h2 {
 	width: 36.8rem;
 	height: 18.4rem;
 	margin: -14.2rem auto 0;
-	border-radius: 0 0 50% 50% / 0 0 100% 100%;
+	border-radius: 0 0 18.4rem 18.4rem;
 	border: 1.2rem double currentColor;
 	border-top: 0;
 	background-color: var(--yellow);
@@ -131,7 +131,7 @@ header > nav > ul:not(:hover) > li > p > a:focus-within {
 		linear-gradient(45deg, #0000 75%, currentColor 0),
 		linear-gradient(-45deg, #0000 75%, currentColor 0),
 		var(--yellow);
-	background-size: 4rem;
+	background-size: 4rem 4rem;
 	text-decoration: none;
 	animation: ants 2s linear infinite;
 }
@@ -169,7 +169,7 @@ footer > p > a {
 	width: 36.8rem;
 	height: 18.4rem;
 	margin: 0 auto -14.2rem;
-	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+	border-radius: 18.4rem 18.4rem 0 0;
 	border: 1.2rem double currentColor;
 	border-bottom: 0;
 	background-color: var(--purple);
@@ -194,7 +194,7 @@ footer > p::after {
 	height: 14.2rem;
 	margin: auto;
 	padding: 1rem 0 0;
-	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+	border-radius: 14.2rem 14.2rem 0 0;
 	border: 1.2rem double currentColor;
 	border-bottom: 0;
 	background:
@@ -233,7 +233,7 @@ main > section:nth-of-type(odd)::before {
 		linear-gradient(to bottom right, #0000 calc(75% - .8rem), var(--yellow) 0),
 		linear-gradient(to bottom left, #0000 calc(75% - 1.2rem), currentColor 0),
 		linear-gradient(to bottom right, #0000 calc(75% - 1.2rem), currentColor 0);
-	background-size: 4rem;
+	background-size: 4rem 4rem;
 	background-repeat: round;
 }
 main > section:nth-of-type(odd)::after {
@@ -252,7 +252,7 @@ main > section:nth-of-type(odd)::after {
 		linear-gradient(to top right, #0000 calc(75% - .8rem), var(--yellow) 0),
 		linear-gradient(to top left, #0000 calc(75% - 1.2rem), currentColor 0),
 		linear-gradient(to top right, #0000 calc(75% - 1.2rem), currentColor 0);
-	background-size: 4rem;
+	background-size: 4rem 4rem;
 	background-repeat: round;
 }
 /*~~~~~~ .classes ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -338,9 +338,11 @@ dl.pantheon > dt {
 dl.pantheon > dt::before {
 	content: "";
 	position: absolute;
+	left: 0;
 	top: 100%;
 	width: 12.4rem;
 	height: 6.2rem;
+	margin: 0 -1.2rem;
 	border: 1.2rem double currentColor;
 	border-top: 0;
 	border-bottom: 0;
@@ -357,10 +359,11 @@ dl.pantheon > dt::before {
 }
 dl.pantheon > dt::after {
 	position: absolute;
+	left: 0;
 	top: 100%;
 	width: 12.4rem;
 	height: 12.4rem;
-	margin: 2rem 0 0;
+	margin: 2rem -1.2rem 0;
 	padding: 1rem;
 	border-radius: 50%;
 	border: 1.2rem double currentColor;
@@ -501,12 +504,14 @@ section.team > figure ~ p > a:not([download])::before {
 	header > hgroup > h1 {
 		width: 34.4rem;
 		height: 17.2rem;
+		border-radius: 0 0 17.2rem 17.2rem;
 		font-size: 4rem;
 	}
 	header > hgroup > h2 {
 		width: 44.8rem;
 		height: 22.4rem;
 		margin: -17.2rem auto 0;
+		border-radius: 0 0 22.4rem 22.4rem;
 		line-height: 1.25;
 		font-size: 3.2rem;
 	}
@@ -528,12 +533,14 @@ section.team > figure ~ p > a:not([download])::before {
 		width: 44.8rem;
 		height: 22.4rem;
 		margin: 0 auto -17.2rem;
+		border-radius: 22.4rem 22.4rem 0 0;
 		line-height: 1.25;
 		font-size: 3.2rem;
 	}
 	footer > p::after {
 		width: 34.4rem;
 		height: 17.2rem;
+		border-radius: 17.2rem 17.2rem 0 0;
 	}
 }
 @media screen and (min-width: 41.25em) {
