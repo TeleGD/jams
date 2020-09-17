@@ -33,10 +33,11 @@
 }
 /*~~~~~~ html, body ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 html {
-	min-height: 100%;
+	height: 100%;
 }
 body {
 	overflow: hidden auto;
+	min-height: 100%;
 	background:
 		linear-gradient(to bottom, var(--yellow-shadow), #0000 100vh),
 		var(--purple);
@@ -432,9 +433,9 @@ section.team > figure::after {
 	width: calc(100% + 4.4rem);
 	height: calc(100% + 4.4rem);
 	background:
-		linear-gradient(var(--angle), var(--yellow) 4.8rem, currentColor 0 5.2rem, var(--yellow) 0 5.6rem, currentColor 0 6rem, #0000 0) no-repeat;
+		linear-gradient(var(--angle), var(--yellow) 4.8rem, currentColor 0 5.2rem, var(--yellow) 0 5.6rem, currentColor 0 6rem, #0000 0) center / 100% 100%;
 	color: var(--purple);
-	transition: background-position .25s, transform .25s;
+	transition: background-size .25s, transform .25s;
 }
 section.team > figure::before {
 	--angle: 142.5deg;
@@ -442,39 +443,12 @@ section.team > figure::before {
 section.team > figure::after {
 	--angle: -37.5deg;
 }
-section.team:nth-of-type(even) > figure::before {
-	--angle: -142.5deg;
-}
-section.team:nth-of-type(even) > figure::after {
-	--angle: 37.5deg;
-}
 section.team:hover > figure::before,
 section.team:hover > figure::after,
 section.team:focus-within > figure::before,
 section.team:focus-within > figure::after {
 	transform: rotate(7.5deg);
-}
-section.team:hover > figure::before,
-section.team:focus-within > figure::before {
-	background-position: -1rem -1rem;
-}
-section.team:hover > figure::after,
-section.team:focus-within > figure::after {
-	background-position: 1rem 1rem;
-}
-section.team:nth-of-type(even):hover > figure::before,
-section.team:nth-of-type(even):hover > figure::after,
-section.team:nth-of-type(even):focus-within > figure::before,
-section.team:nth-of-type(even):focus-within > figure::after {
-	transform: rotate(-7.5deg);
-}
-section.team:nth-of-type(even):hover > figure::before,
-section.team:nth-of-type(even):focus-within > figure::before {
-	background-position: 1rem -1rem;
-}
-section.team:nth-of-type(even):hover > figure::after,
-section.team:nth-of-type(even):focus-within > figure::after {
-	background-position: -1rem 1rem;
+	background-size: calc(100% + 2rem) calc(100% + 2rem);
 }
 section.team > figure > figcaption {
 	font-size: 0;
@@ -497,8 +471,8 @@ section.team > figure ~ p > a {
 	position: relative;
 	z-index: 1;
 	display: inline-block;
-	width: calc(100% + 2rem);
-	margin: -1rem;
+	width: calc(100% - 2rem);
+	margin: -1rem 1rem;
 	padding: 1rem 1rem 1rem 5rem;
 	border: 1.2rem double currentColor;
 	background: var(--purple);
@@ -522,6 +496,7 @@ section.team > figure ~ p > a[download]::before {
 section.team > figure ~ p > a:not([download])::before {
 	clip-path: polygon(12.5% 6.699%, 87.5% 50%, 12.5% 93.301%);
 }
+/*~~~~~~ @media ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 @media screen and (min-width: 27.5em) {
 	header > hgroup > h1 {
 		width: 34.4rem;
@@ -636,10 +611,23 @@ section.team > figure ~ p > a:not([download])::before {
 		bottom: 0;
 		width: 34.4rem;
 		height: 20.4rem;
-		margin: auto -2rem;
+		margin: auto 2rem auto -2rem;
 	}
 	section.team:nth-of-type(even) > figure {
-		left: calc(100% - 30.4rem);
+		left: calc(100% - 34.4rem);
+		margin: auto -2rem auto 2rem;
+	}
+	section.team:nth-of-type(even) > figure::before {
+		--angle: -142.5deg;
+	}
+	section.team:nth-of-type(even) > figure::after {
+		--angle: 37.5deg;
+	}
+	section.team:nth-of-type(even):hover > figure::before,
+	section.team:nth-of-type(even):hover > figure::after,
+	section.team:nth-of-type(even):focus-within > figure::before,
+	section.team:nth-of-type(even):focus-within > figure::after {
+		transform: rotate(-7.5deg);
 	}
 }
 @media screen and (min-width: 55em) {
@@ -657,9 +645,10 @@ section.team > figure ~ p > a:not([download])::before {
 	section.team > figure {
 		width: 50.4rem;
 		height: 29.4rem;
-		margin: auto 2rem;
+		margin: auto -2rem auto 2rem;
 	}
 	section.team:nth-of-type(even) > figure {
-		left: calc(100% - 54.4rem);
+		left: calc(100% - 50.4rem);
+		margin: auto 2rem auto -2rem;
 	}
 }
