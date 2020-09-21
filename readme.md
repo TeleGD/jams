@@ -6,7 +6,7 @@ Cette première édition s'est déroulée sur 24h à partir du 22 mai 2020 à 14
 
 | Équipe | Jeu | Dépôt | Moteur |
 | - | - | - | - |
-| Team du Président | Totally cute and ethical cute little cow farming simulator | [tgj-ethical-cow-simulator][tgj-ethical-cow-simulator] | Unity |
+| Team du Président | Ethical Cow Simulator | [tgj-ethical-cow-simulator][tgj-ethical-cow-simulator] | Unity |
 | eXCeL | Waifu Projects | [tgj-waifu-projects][tgj-waifu-projects] | Slick2D |
 | Team des Grands Dinosaures | Bamboo Invaders | [tgj-bamboo-invaders][tgj-bamboo-invaders] | Slick2D |
 | Friendly Okapi Attack | POP it UP | [tgj-pop-it-up][tgj-pop-it-up] | Multimedia Fusion |

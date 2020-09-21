@@ -314,7 +314,7 @@ ol.podium > li > p:nth-of-type(1) {
 }
 dl.pantheon {
 	place-content: stretch start;
-	place-items: center stretch;
+	place-items: start stretch;
 	grid-template-columns: auto 1fr;
 	display: grid;
 	margin: 2rem -2rem;
