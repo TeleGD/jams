@@ -313,8 +313,7 @@ ol.podium > li > p:nth-of-type(1) {
 	text-align: left;
 }
 dl.pantheon {
-	place-content: stretch start;
-	place-items: start stretch;
+	place-items: center stretch;
 	grid-template-columns: auto 1fr;
 	display: grid;
 	margin: 2rem -2rem;
@@ -323,9 +322,6 @@ dl.pantheon {
 }
 dl.pantheon > dt {
 	position: relative;
-	place-items: start center;
-	grid-template-rows: auto 1fr;
-	display: grid;
 	width: 12.4rem;
 	margin: 0 0 14.4rem;
 	padding: 5rem 1rem 3rem;
