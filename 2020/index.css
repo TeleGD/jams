@@ -119,8 +119,6 @@ header > nav > ul > li > p > a {
 }
 header > nav > ul > li > p > a:hover,
 header > nav > ul > li > p > a:focus-within {
-	outline: 0;
-	outline-offset: 0;
 	text-decoration: none;
 }
 header > nav > ul > li > p > a:hover,
@@ -134,7 +132,6 @@ header > nav > ul:not(:hover) > li > p > a:focus-within {
 		linear-gradient(-45deg, #0000 75%, currentColor 0),
 		var(--yellow);
 	background-size: 4rem 4rem;
-	text-decoration: none;
 	animation: ants 2s linear infinite;
 }
 header > nav > ul > li > p > a::before {
@@ -169,7 +166,6 @@ footer {
 	padding: 4rem 0 0;
 	gap: 4rem;
 	background: var(--yellow);
-	color: var(--purple);
 }
 footer > p {
 	margin: 0;
@@ -188,6 +184,7 @@ footer > p::after {
 	background:
 		url("../../logotypes/brandmark/multicolored.png") center center / contain no-repeat content-box,
 		var(--yellow);
+	color: var(--purple);
 }
 footer > p > a {
 	overflow: hidden;
@@ -207,8 +204,6 @@ footer > p > a {
 }
 footer > p > a:hover,
 footer > p > a:focus-within {
-	outline: 0;
-	outline-offset: 0;
 	background: var(--yellow);
 	color: var(--purple);
 	text-decoration: none;
@@ -219,11 +214,11 @@ main {
 	display: grid;
 	gap: 4rem;
 	background: var(--purple);
-	color: var(--yellow);
 }
 main > section {
 	position: relative;
 	padding: 2rem max(2rem, 50vw - 44rem);
+	color: var(--yellow);
 }
 main > section:nth-of-type(odd) {
 	background: var(--yellow);
@@ -269,9 +264,12 @@ main > section:nth-of-type(odd)::after {
 }
 main > section a {
 	--highlight: var(--light-purple);
+	position: relative;
+	z-index: 1;
 	-webkit-box-decoration-break: clone;
 	box-decoration-break: clone;
-	background: linear-gradient(to bottom, var(--highlight), var(--highlight)) center bottom / calc(100% - .5em) .25em no-repeat;
+	background:
+		linear-gradient(to bottom, var(--highlight), var(--highlight)) center bottom / calc(100% - .5em) .25em no-repeat;
 	transition: background-size .25s;
 }
 main > section a:hover,
@@ -420,6 +418,9 @@ section.team {
 	display: flow-root;
 	margin: 2rem 0;
 }
+section.team > h3 > a {
+	position: static;
+}
 section.team > h3 > a::before {
 	content: "";
 	position: absolute;
@@ -428,6 +429,27 @@ section.team > h3 > a::before {
 	z-index: 1;
 	width: 100%;
 	height: 100%;
+}
+section.team > blockquote {
+	margin: 0;
+}
+section.team > blockquote::before {
+	content: "";
+	float: left;
+	width: 6rem;
+	height: 6rem;
+	background:
+		linear-gradient(to left top, #0000 75%, var(--yellow) 0),
+		linear-gradient(to left bottom, #0000 75%, var(--yellow) 0),
+		linear-gradient(to left top, #0000 calc(75% - .4rem), currentColor 0),
+		linear-gradient(to left bottom, #0000 calc(75% - .4rem), currentColor 0),
+		linear-gradient(to left top, #0000 calc(75% - .8rem), var(--yellow) 0),
+		linear-gradient(to left bottom, #0000 calc(75% - .8rem), var(--yellow) 0),
+		linear-gradient(to left top, #0000 calc(75% - 1.2rem), currentColor 0),
+		linear-gradient(to left bottom, #0000 calc(75% - 1.2rem), currentColor 0);
+	background-position: center center;
+	background-size: 4rem 4rem;
+	background-repeat: no-repeat;
 }
 section.team > figure {
 	position: relative;
@@ -481,12 +503,12 @@ section.team > figure > picture > img {
 	border-radius: 1.2rem;
 	object-fit: cover;
 }
-section.team > figure ~ p {
+section.team > p {
 	margin: 2rem 0;
 	padding: 0 2rem;
 	text-align: center;
 }
-section.team > figure ~ p > a {
+section.team > p > a {
 	position: relative;
 	z-index: 1;
 	display: inline-block;
@@ -497,9 +519,8 @@ section.team > figure ~ p > a {
 	background: var(--purple);
 	color: var(--yellow);
 	text-align: left;
-	transition: border-radius .25s;
 }
-section.team > figure ~ p > a::before {
+section.team > p > a::before {
 	content: "";
 	position: absolute;
 	left: 1rem;
@@ -510,10 +531,10 @@ section.team > figure ~ p > a::before {
 	margin: auto;
 	background: currentColor;
 }
-section.team > figure ~ p > a[download]::before {
+section.team > p > a[download]::before {
 	clip-path: polygon(31.25% 12.5%, 68.75% 12.5%, 68.75% 50%, 87.5% 50%, 50% 87.5%, 12.5% 50%, 31.25% 50%);
 }
-section.team > figure ~ p > a:not([download])::before {
+section.team > p > a:not([download])::before {
 	clip-path: polygon(12.5% 6.699%, 87.5% 50%, 12.5% 93.301%);
 }
 /*~~~~~~ @media ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
