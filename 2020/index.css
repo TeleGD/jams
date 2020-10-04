@@ -442,10 +442,6 @@ section.team:hover > figure,
 section.team:focus-within > figure {
 	transform: rotate(-7.5deg);
 }
-section.team:nth-of-type(even):hover > figure,
-section.team:nth-of-type(even):focus-within > figure {
-	transform: rotate(7.5deg);
-}
 section.team > figure::before,
 section.team > figure::after {
 	content: "";
@@ -644,6 +640,10 @@ section.team > figure ~ p > a:not([download])::before {
 	section.team:nth-of-type(even) > figure {
 		left: calc(100% - 34.4rem);
 		margin: auto -2rem auto 2rem;
+	}
+	section.team:nth-of-type(even):hover > figure,
+	section.team:nth-of-type(even):focus-within > figure {
+		transform: rotate(7.5deg);
 	}
 	section.team:nth-of-type(even) > figure::before {
 		--angle: -142.5deg;
