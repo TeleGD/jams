@@ -51,7 +51,7 @@ header {
 	display: grid;
 	min-height: 100vh;
 	padding: 0 0 4rem;
-	gap: 4rem;
+	gap: 4rem 0;
 }
 header > hgroup {
 	font-family: "Ewert", monospace;
@@ -112,7 +112,7 @@ header > nav > ul > li > p > a {
 	display: grid;
 	margin: -1rem;
 	padding: 1rem;
-	gap: 1rem;
+	gap: 0 1rem;
 	border-radius: 3.2rem;
 	border: 1.2rem double #0000;
 	pointer-events: none;
@@ -151,7 +151,7 @@ header > nav > ul > li > p > a::after {
 header > nav > ul > li > p > a > strong {
 	place-items: center stretch;
 	display: grid;
-	gap: 1rem;
+	gap: 0 1rem;
 	line-height: .625;
 	font-family: "Ewert", monospace;
 	font-size: 2em;
@@ -164,7 +164,7 @@ footer {
 	place-items: center center;
 	display: grid;
 	padding: 4rem 0 0;
-	gap: 4rem;
+	gap: 4rem 0;
 	background: var(--yellow);
 }
 footer > p {
@@ -212,7 +212,7 @@ footer > p > a:focus-within {
 main {
 	position: relative;
 	display: grid;
-	gap: 4rem;
+	gap: 4rem 0;
 	background: var(--purple);
 }
 main > section {
@@ -452,20 +452,29 @@ section.team > blockquote::before {
 	background-repeat: no-repeat;
 }
 section.team > figure {
-	position: relative;
+	display: grid;
 	margin: 2rem -2rem;
+	gap: 2rem 0;
+}
+section.team > figure > figcaption {
+	order: 1;
+	padding: 0 2rem;
+	text-align: center;
+}
+section.team > figure > picture {
+	position: relative;
 	border-radius: 2.4rem;
 	border: 1.2rem double currentColor;
 	background: var(--purple);
 	color: var(--yellow);
 	transition: transform .25s;
 }
-section.team:hover > figure,
-section.team:focus-within > figure {
+section.team:hover > figure > picture,
+section.team:focus-within > figure > picture {
 	transform: rotate(-7.5deg);
 }
-section.team > figure::before,
-section.team > figure::after {
+section.team > figure > picture::before,
+section.team > figure > picture::after {
 	content: "";
 	position: absolute;
 	left: -2.2rem;
@@ -478,21 +487,18 @@ section.team > figure::after {
 	color: var(--purple);
 	transition: background-size .25s, transform .25s;
 }
-section.team > figure::before {
+section.team > figure > picture::before {
 	--angle: 142.5deg;
 }
-section.team > figure::after {
+section.team > figure > picture::after {
 	--angle: -37.5deg;
 }
-section.team:hover > figure::before,
-section.team:hover > figure::after,
-section.team:focus-within > figure::before,
-section.team:focus-within > figure::after {
+section.team:hover > figure > picture::before,
+section.team:hover > figure > picture::after,
+section.team:focus-within > figure > picture::before,
+section.team:focus-within > figure > picture::after {
 	transform: rotate(7.5deg);
 	background-size: calc(100% + 2rem) calc(100% + 2rem);
-}
-section.team > figure > figcaption {
-	font-size: 0;
 }
 section.team > figure > picture > img {
 	overflow: hidden;
@@ -524,12 +530,12 @@ section.team > p > a::before {
 	content: "";
 	position: absolute;
 	left: 1rem;
-	top: 1rem;
-	bottom: 1rem;
+	top: 50%;
 	width: 2rem;
 	height: 2rem;
 	margin: auto;
 	background: currentColor;
+	transform: translate(0, -50%);
 }
 section.team > p > a[download]::before {
 	clip-path: polygon(31.25% 12.5%, 68.75% 12.5%, 68.75% 50%, 87.5% 50%, 50% 87.5%, 12.5% 50%, 31.25% 50%);
@@ -652,30 +658,32 @@ section.team > p > a:not([download])::before {
 	section.team > figure {
 		position: absolute;
 		left: 0;
-		top: 0;
-		bottom: 0;
+		top: 50%;
 		width: 34.4rem;
-		height: 20.4rem;
-		margin: auto 2rem auto -2rem;
+		margin: 0 2rem 0 -2rem;
+		transform: translate(0, -50%);
 	}
 	section.team:nth-of-type(even) > figure {
 		left: calc(100% - 34.4rem);
-		margin: auto -2rem auto 2rem;
+		margin: 0 -2rem 0 2rem;
 	}
-	section.team:nth-of-type(even):hover > figure,
-	section.team:nth-of-type(even):focus-within > figure {
+	section.team > figure > picture {
+		height: 20.4rem;
+	}
+	section.team:nth-of-type(even):hover > figure > picture,
+	section.team:nth-of-type(even):focus-within > figure > picture {
 		transform: rotate(7.5deg);
 	}
-	section.team:nth-of-type(even) > figure::before {
+	section.team:nth-of-type(even) > figure > picture::before {
 		--angle: -142.5deg;
 	}
-	section.team:nth-of-type(even) > figure::after {
+	section.team:nth-of-type(even) > figure > picture::after {
 		--angle: 37.5deg;
 	}
-	section.team:nth-of-type(even):hover > figure::before,
-	section.team:nth-of-type(even):hover > figure::after,
-	section.team:nth-of-type(even):focus-within > figure::before,
-	section.team:nth-of-type(even):focus-within > figure::after {
+	section.team:nth-of-type(even):hover > figure > picture::before,
+	section.team:nth-of-type(even):hover > figure > picture::after,
+	section.team:nth-of-type(even):focus-within > figure > picture::before,
+	section.team:nth-of-type(even):focus-within > figure > picture::after {
 		transform: rotate(-7.5deg);
 	}
 }
@@ -693,11 +701,13 @@ section.team > p > a:not([download])::before {
 	}
 	section.team > figure {
 		width: 50.4rem;
-		height: 29.4rem;
-		margin: auto -2rem auto 2rem;
+		margin: 0 -2rem 0 2rem;
 	}
 	section.team:nth-of-type(even) > figure {
 		left: calc(100% - 50.4rem);
-		margin: auto 2rem auto -2rem;
+		margin: 0 2rem 0 -2rem;
+	}
+	section.team > figure > picture {
+		height: 29.4rem;
 	}
 }
